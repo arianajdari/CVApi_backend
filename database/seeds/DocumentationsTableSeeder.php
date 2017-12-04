@@ -434,7 +434,62 @@ class DocumentationsTableSeeder extends Seeder
     		'links' => "<ul>
 					<li><a href='#'>histogram</a></li>
 				</ul>",
-    		]
+    		], [
+    		'name' => 'medianBlur',
+    		'description' => 'medianBlur - blurs an image',
+    		'prototype' => 'public CVApi\CVApi medianBlur($size)',
+    		'explanation' => 'This function receives 1 parameter which specifies the magnitude of the blur',
+    		'parameters' => '<ul>
+					<li>
+						$size - magnitude of the blur	
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->medianBlur(3); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>bilateralBlur</a></li>
+					<li><a href='#'>blur</a></li>
+					<li><a href='#'>gaussianBlur</a></li>
+					<li><a href='#'>normalBlur</a></li>
+					<li><a href='#'>sharpen</a></li>
+				</ul>",
+    		], [
+    		'name' => 'morphGradient',
+    		'description' => 'morphGradient - perform morphGradient on an image',
+    		'prototype' => 'public CVApi\CVApi morphGradient($kernel_size = 3)',
+    		'explanation' => 'This function receives 1 parameter which perform morphGradient on an image',
+    		'parameters' => '<ul>
+					<li>
+						$kernel_size - size of the kernel
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->morphGradient(3); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>dilate</a></li>
+					<li><a href='#'>erode</a></li>
+					<li><a href='#'>opening</a></li>
+					<li><a href='#'>closing</a></li>
+					<li><a href='#'>blackHat</a></li>
+					<li><a href='#'>topHat</a></li>
+				</ul>",
+    		], [
+    		'name' => 'normalBlur',
+    		'description' => 'normalBlur - blurs an image',
+    		'prototype' => 'public CVApi\CVApi normalBlur($box_size)',
+    		'explanation' => 'This function receives 1 parameter which specifies the size of the box',
+    		'parameters' => '<ul>
+					<li>
+						$box_size - box size value	
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->normalBlur(3); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>bilateralBlur</a></li>
+					<li><a href='#'>blur</a></li>
+					<li><a href='#'>gaussianBlur</a></li>
+					<li><a href='#'>medianBlur</a></li>
+					<li><a href='#'>sharpen</a></li>
+				</ul>",
+    		], 
     	]);
     }
 }
