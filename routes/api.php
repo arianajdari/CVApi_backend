@@ -14,6 +14,6 @@ use Illuminate\Http\Request;
 */
 
 Route::post('/request', [
-	'uses' => 'UserController@processRequest',
+	'uses' => 'ApiController@processRequest',
 	'as' => 'request'
 ]);
