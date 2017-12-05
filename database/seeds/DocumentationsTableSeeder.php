@@ -356,7 +356,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'histogram',
-    		'description' => 'histogram - Extract a histogram of the image',
+    		'description' => 'histogram - extract a histogram of the image',
     		'prototype' => 'public CVApi\CVApi histogram($bean_size = 256, $range_min = 0, $range_max = 256)',
     		'explanation' => 'This function receives 3 parameters and creates a histogram by plotting it as a graph',
     		'parameters' => '<ul>
@@ -399,7 +399,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'hsvToRgb',
-    		'description' => 'hsvToRgb - Convert an HSV image to RGB',
+    		'description' => 'hsvToRgb - convert an HSV image to RGB',
     		'prototype' => 'public CVApi\CVApi hsvToRgb(void)',
     		'explanation' => 'This function receives a coloured HSV image (3-dimensional array) and converts it to RGB version',
     		'parameters' => '<ul>
@@ -422,7 +422,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'imageChannels',
-    		'description' => 'imageChannels - Extract individual image channels.',
+    		'description' => 'imageChannels - extract individual image channels.',
     		'prototype' => 'public CVApi\CVApi imageChannels($array = [\'B\', \'G\', \'R\'])',
     		'explanation' => 'This function receives an array containing image channels which are to be extracted',
     		'parameters' => '<ul>
@@ -489,7 +489,319 @@ class DocumentationsTableSeeder extends Seeder
 					<li><a href='#'>medianBlur</a></li>
 					<li><a href='#'>sharpen</a></li>
 				</ul>",
-    		], 
+    		], [
+    		'name' => 'opening',
+    		'description' => 'opening - perform dilation followed by erosion on an image',
+    		'prototype' => 'public CVApi\CVApi opening($kernel_size = 3)',
+    		'explanation' => 'This function receives 1 parameters which perform opening on an image',
+    		'parameters' => '<ul>
+					<li>
+						$kernel_size - size of the kernel
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->opening(3); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>dilate</a></li>
+					<li><a href='#'>erode</a></li>
+					<li><a href='#'>closing</a></li>
+					<li><a href='#'>morphGradient</a></li>
+					<li><a href='#'>blackHat</a></li>
+					<li><a href='#'>topHat</a></li>
+				</ul>",
+    		], [
+    		'name' => 'pyrDown',
+    		'description' => 'pyrDown - perform gradual decrease in size of image',
+    		'prototype' => 'public CVApi\CVApi pyrDown($times = 1)',
+    		'explanation' => 'This function receives 1 parameter which performs pyrDown on an image',
+    		'parameters' => '<ul>
+					<li>
+						$times - number of iterations
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->pyrDown(2); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>crop</a></li>
+					<li><a href='#'>pyrUp</a></li>
+					<li><a href='#'>enlarge</a></li>
+					<li><a href='#'>reduce</a></li>
+					<li><a href='#'>resize</a></li>
+					<li><a href='#'>rotate</a></li>
+					<li><a href='#'>translate</a></li>
+					<li><a href='#'>transpose</a></li>
+				</ul>",
+    		], [
+    		'name' => 'pyrUp',
+    		'description' => 'pyrUp - perform gradual increase in size of image',
+    		'prototype' => 'public CVApi\CVApi pyrUp($times = 1)',
+    		'explanation' => 'This function receives 1 parameter which performs pyrUp on an image',
+    		'parameters' => '<ul>
+					<li>
+						$times - number of iterations
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->pyrUp(2); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>crop</a></li>
+					<li><a href='#'>pyrDown</a></li>
+					<li><a href='#'>enlarge</a></li>
+					<li><a href='#'>reduce</a></li>
+					<li><a href='#'>resize</a></li>
+					<li><a href='#'>rotate</a></li>
+					<li><a href='#'>translate</a></li>
+					<li><a href='#'>transpose</a></li>
+				</ul>",
+    		], [
+    		'name' => 'reduce',
+    		'description' => 'reduce - reduces an image',
+    		'prototype' => 'public CVApi\CVApi reduce($fx, $fy)',
+    		'explanation' => 'This function receives 2 parameters which reduces an image (without skew)',
+    		'parameters' => '<ul>
+					<li>
+						$fx - x-axis aspect-ratio	
+					</li>
+					<li>
+						$fy - y-axis aspect-ratio
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->reduce(0.5, 0.5); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>crop</a></li>
+					<li><a href='#'>pyrDown</a></li>
+					<li><a href='#'>pyrUp</a></li>
+					<li><a href='#'>enlarge</a></li>
+					<li><a href='#'>resize</a></li>
+					<li><a href='#'>rotate</a></li>
+					<li><a href='#'>translate</a></li>
+					<li><a href='#'>transpose</a></li>
+				</ul>",
+    		], [
+    		'name' => 'resize',
+    		'description' => 'resize - resize an image',
+    		'prototype' => 'public CVApi\CVApi resize($x, $y, $interpolation)',
+    		'explanation' => 'This function receives 3 parameters which resize an image (with skew)',
+    		'parameters' => '<ul>
+					<li>
+						$x - width	
+					</li>
+					<li>
+						$y - height
+					</li>
+					<li>
+						$interpolation - interpolation method
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->resize(400, 350, 0); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>crop</a></li>
+					<li><a href='#'>pyrDown</a></li>
+					<li><a href='#'>pyrUp</a></li>
+					<li><a href='#'>enlarge</a></li>
+					<li><a href='#'>reduce</a></li>
+					<li><a href='#'>rotate</a></li>
+					<li><a href='#'>translate</a></li>
+					<li><a href='#'>transpose</a></li>
+				</ul>",
+    		], [
+    		'name' => 'rgbToBgr',
+    		'description' => 'rgbToBgr - convert an RGB image to BGR',
+    		'prototype' => 'public CVApi\CVApi rgbToBgr(void)',
+    		'explanation' => 'This function receives a coloured RGB image (3-dimensional array) and converts it to BGR version',
+    		'parameters' => '<ul>
+					<li>
+						void	
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->rgbToBgr(); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>bgrToGray</a></li>
+					<li><a href='#'>bgrToHsv</a></li>
+					<li><a href='#'>bgrToRgb</a></li>
+					<li><a href='#'>grayscale</a></li>
+					<li><a href='#'>grayToBgr</a></li>
+					<li><a href='#'>grayToRgb</a></li>
+					<li><a href='#'>hsvToBgr</a></li>
+					<li><a href='#'>hsvToRgb</a></li>
+					<li><a href='#'>rgbToGray</a></li>
+					<li><a href='#'>rgbToHsv</a></li>
+				</ul>",
+    		], [
+    		'name' => 'rgbToGray',
+    		'description' => 'rgbToGray - convert an RGB image to grayscale',
+    		'prototype' => 'public CVApi\CVApi rgbToGray(void)',
+    		'explanation' => 'This function receives a coloured RGB image (3-dimensional array) and converts it to grayscale version',
+    		'parameters' => '<ul>
+					<li>
+						void	
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->rgbToGray(); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>bgrToGray</a></li>
+					<li><a href='#'>bgrToHsv</a></li>
+					<li><a href='#'>bgrToRgb</a></li>
+					<li><a href='#'>grayscale</a></li>
+					<li><a href='#'>grayToBgr</a></li>
+					<li><a href='#'>grayToRgb</a></li>
+					<li><a href='#'>hsvToBgr</a></li>
+					<li><a href='#'>hsvToRgb</a></li>
+					<li><a href='#'>rgbToBgr</a></li>
+					<li><a href='#'>rgbToHsv</a></li>
+				</ul>",
+    		], [
+    		'name' => 'rgbToHsv',
+    		'description' => 'rgbToHsv - convert an RGB image to HSV',
+    		'prototype' => 'public CVApi\CVApi rgbToHsv(void)',
+    		'explanation' => 'This function receives a coloured RGB image (3-dimensional array) and converts it to HSV version',
+    		'parameters' => '<ul>
+					<li>
+						void	
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->rgbToHsv(); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>bgrToGray</a></li>
+					<li><a href='#'>bgrToHsv</a></li>
+					<li><a href='#'>bgrToRgb</a></li>
+					<li><a href='#'>grayscale</a></li>
+					<li><a href='#'>grayToBgr</a></li>
+					<li><a href='#'>grayToRgb</a></li>
+					<li><a href='#'>hsvToBgr</a></li>
+					<li><a href='#'>hsvToRgb</a></li>
+					<li><a href='#'>rgbToBgr</a></li>
+					<li><a href='#'>rgbToGray</a></li>
+				</ul>",
+    		], [
+    		'name' => 'rotate',
+    		'description' => 'rotate - rotates an image',
+    		'prototype' => 'public CVApi\CVApi rotate($x, $y, $angle)',
+    		'explanation' => 'This function receives 3 parameters which rotate an image',
+    		'parameters' => '<ul>
+					<li>
+						$x - x coordinate of the rotation center	
+					</li>
+					<li>
+						$y - y coordinate of the rotation center
+					</li>
+					<li>
+						$angle - the angle of the rotation
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->rotate(50, 50, 45); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>crop</a></li>
+					<li><a href='#'>pyrDown</a></li>
+					<li><a href='#'>pyrUp</a></li>
+					<li><a href='#'>enlarge</a></li>
+					<li><a href='#'>reduce</a></li>
+					<li><a href='#'>resize</a></li>
+					<li><a href='#'>translate</a></li>
+					<li><a href='#'>transpose</a></li>
+				</ul>",
+    		], [
+    		'name' => 'sharpen',
+    		'description' => 'sharpen - sharpens an image',
+    		'prototype' => 'public CVApi\CVApi sharpen(void)',
+    		'explanation' => 'This function sharpens an image',
+    		'parameters' => '<ul>
+					<li>
+						void
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->sharpen(); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>bilateralBlur</a></li>
+					<li><a href='#'>blur</a></li>
+					<li><a href='#'>gaussianBlur</a></li>
+					<li><a href='#'>medianBlur</a></li>
+					<li><a href='#'>normalBlur</a></li>
+				</ul>",
+    		], [
+    		'name' => 'threshold',
+    		'description' => 'threshold - binary thresholding of an image',
+    		'prototype' => 'public CVApi\CVApi threshold($min, $max, $type)',
+    		'explanation' => 'This function receives 3 parameters which determine thresholding of an image',
+    		'parameters' => '<ul>
+					<li>
+						$min - minimum value for thresholding	
+					</li>
+					<li>
+						$max - maximum value for thresholding
+					</li>
+					<li>
+						$type - type of thresholding
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->threshold(127, 255, 0); <br>$image->save();',
+    		'links' => "<ul>
+					<li>
+						<a href='#'>adaptiveThreshold</a>
+					</li>
+				</ul>",
+    		], [
+    		'name' => 'topHat',
+    		'description' => 'topHat - perform topHat on an image',
+    		'prototype' => 'public CVApi\CVApi topHat($kernel_size = 3)',
+    		'explanation' => 'This function receives 1 parameter which performs topHat on an image',
+    		'parameters' => '<ul>
+					<li>
+						$kernel_size - size of the kernel
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->topHat(3); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>dilate</a></li>
+					<li><a href='#'>erode</a></li>
+					<li><a href='#'>opening</a></li>
+					<li><a href='#'>closing</a></li>
+					<li><a href='#'>morphGradient</a></li>
+					<li><a href='#'>blackHat</a></li>
+				</ul>",
+    		], [
+    		'name' => 'translate',
+    		'description' => 'translate - translates an image',
+    		'prototype' => 'public CVApi\CVApi translate($x, $y)',
+    		'explanation' => 'This function receives 2 parameters which translates an image',
+    		'parameters' => '<ul>
+					<li>
+						$x - translate according to x-axis	
+					</li>
+					<li>
+						$y - translate according to y-axis
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->translate(50, 50); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>crop</a></li>
+					<li><a href='#'>pyrDown</a></li>
+					<li><a href='#'>pyrUp</a></li>
+					<li><a href='#'>enlarge</a></li>
+					<li><a href='#'>reduce</a></li>
+					<li><a href='#'>resize</a></li>
+					<li><a href='#'>rotate</a></li>
+					<li><a href='#'>transpose</a></li>
+				</ul>",
+    		], [
+    		'name' => 'transpose',
+    		'description' => 'transpose - gets a transpose of an image (90 degree rotation)',
+    		'prototype' => 'public CVApi\CVApi transpose(void)',
+    		'explanation' => 'This function transposes an image',
+    		'parameters' => '<ul>
+					<li>
+						void
+					</li>
+				</ul>',
+    		'example' => '$image = CVApi::make("image.jpg")->transpose(); <br>$image->save();',
+    		'links' => "<ul>
+					<li><a href='#'>crop</a></li>
+					<li><a href='#'>pyrDown</a></li>
+					<li><a href='#'>pyrUp</a></li>
+					<li><a href='#'>enlarge</a></li>
+					<li><a href='#'>reduce</a></li>
+					<li><a href='#'>resize</a></li>
+					<li><a href='#'>rotate</a></li>
+					<li><a href='#'>translate</a></li>
+				</ul>",
+    		],
     	]);
     }
 }
