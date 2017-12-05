@@ -12,5 +12,36 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	if(\Illuminate\Support\Facades\Auth::user()) return redirect()->route('dashboard');
+	return view('index');
+})->name('login');
+
+Route::post('/register', [
+	'uses' => 'UserController@register',
+	'as' => 'register'
+]);
+
+Route::post('/signin', [
+	'uses' => 'UserController@signin',
+	'as' => 'signin'
+]);
+
+
+Route::group(['middleware' => ['auth']], function() {
+	Route::get('/dashboard', [
+		'uses' => 'DashboardController@getDashboard',
+		'as' => 'dashboard'
+	]);
+
+	Route::get('/logout', [
+		'uses' => 'UserController@logout',
+		'as' => 'logout'
+	]);
+
+	Route::get('/getDocumentation/{id}', [
+		'uses' => 'DashboardController@getDocumentation',
+		'as' => 'getDocumentation'
+	]); 
+
 });
+

@@ -22,6 +22,7 @@ class Users extends Migration
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();
+            $table->rememberToken();
         });
     }
 
