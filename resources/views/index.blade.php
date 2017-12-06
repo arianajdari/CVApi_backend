@@ -39,7 +39,7 @@
             <li><a href="{{ route('getDocumentation', ['id' => 1]) }}">Documentation</a></li>
             <li><a href="{{ route('logout')}}">Logout</a></li>
         @else
-
+            <li><a href="{{ route('liveDemo') }}">Try it</a></li>
         @endif
 
       </ul>

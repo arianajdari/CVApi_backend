@@ -18,8 +18,7 @@ class ApiController extends Controller
     }
 
     public function processRequest(Request $request)
-    {
-    	
+    {  	
         $userApp = UserApp::where('public_key', $request->public_key)->get();
 
         $public_key = $userApp[0]->public_key;

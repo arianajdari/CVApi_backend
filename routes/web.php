@@ -26,6 +26,21 @@ Route::post('/signin', [
 	'as' => 'signin'
 ]);
 
+Route::get('/live', [
+	'uses' => 'DemoController@getView',
+	'as' => 'liveDemo'
+]);
+
+Route::post('/uploadPic', [
+	'uses' => 'DemoController@uploadPic',
+	'as' => 'uploadPic'
+]);
+
+Route::get('/getImage/{id}', [
+	'uses' => 'DemoController@getImage',
+	'as' => 'getImage'
+]);
+
 
 Route::group(['middleware' => ['auth']], function() {
 	Route::get('/dashboard', [
