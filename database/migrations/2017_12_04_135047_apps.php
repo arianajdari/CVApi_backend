@@ -20,7 +20,7 @@ class Apps extends Migration
             $table->string('public_key');
             $table->string('secret_key');
             $table->string('password');
-
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('NO ACTION');
         });

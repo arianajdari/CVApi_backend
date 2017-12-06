@@ -44,5 +44,22 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+
+<div class="row">
+
+<div class="col-md-4 col-md-offset-4">
+  <h3>Create an App</h3>
+  <form method="post" action="{{ route('createApp') }}">
+  <div class="form-group">
+    <input class="form-control" type="text" name="name" placeholder="App Name">
+  </div>
+  <input type="submit" name="submit" value="Create" class="btn btn-primary">
+  <input type="hidden" name="_token" value="{{ Session::token() }}">
+</form>    
+</div>
+
+</div>
+
+
 </body>
 </html>

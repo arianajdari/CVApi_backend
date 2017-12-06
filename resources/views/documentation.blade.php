@@ -81,3 +81,39 @@
 		</div>
 	</div>
 @endsection
+
+
+@section('javascript')
+
+	<script type="text/javascript" src="{{ URL::to('js/app.js') }}"></script>
+
+	<script type="text/javascript">
+
+
+		var token = '{{ Session::token() }}';
+		var url = '{{ route('fetchText') }}';
+
+
+		$('.callFunction').click(function(e) {
+			e.preventDefault();
+
+			var text = $(this).text();
+
+			$.ajax({
+				'method' : 'POST',
+				'url' : url,
+				'data' : {
+					'text' : text,
+					'_token' : token
+				}
+			}).done(function(msg) {
+				var id = msg['data'];
+
+				console.log(id);
+				location.href = '/getDocumentation/'+id;
+			});
+
+		});
+	</script>
+
+@endsection

@@ -21,6 +21,7 @@ class Users extends Migration
             $table->string('password');
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
+            $table->integer('role')->default(0)->nullable();
             $table->timestamps();
             $table->rememberToken();
         });

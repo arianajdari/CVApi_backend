@@ -43,5 +43,15 @@ Route::group(['middleware' => ['auth']], function() {
 		'as' => 'getDocumentation'
 	]); 
 
+	Route::post('/fetchText', [
+		'uses' => 'DashboardController@fetchText',
+		'as' => 'fetchText'
+	]);
+
+	Route::post('/createApp', [
+		'uses' => 'DashboardController@createApp',
+		'as' => 'createApp'
+	]);
+
 });
 

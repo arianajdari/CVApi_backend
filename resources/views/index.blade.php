@@ -38,7 +38,10 @@
             <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li><a href="{{ route('getDocumentation', ['id' => 1]) }}">Documentation</a></li>
             <li><a href="{{ route('logout')}}">Logout</a></li>
+        @else
+
         @endif
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

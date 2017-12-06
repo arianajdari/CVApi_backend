@@ -21,7 +21,8 @@ class Documentations extends Migration
             $table->string('explanation');
             $table->string('parameters', 512);
             $table->string('example');
-            $table->string('links', 512);
+            $table->string('links', 1024);
+            $table->timestamps();
         });
     }
 

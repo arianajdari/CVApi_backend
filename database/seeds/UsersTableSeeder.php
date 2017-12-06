@@ -19,12 +19,14 @@ class UsersTableSeeder extends Seeder
         		'surname' => 'Ajdari',
         		'email' => 'arianajdari23@gmail.com',
         		'password' => bcrypt('arian'),
+                'role' => 2
         	],
         	[
         		'name' => 'Taha',
         		'surname' => 'Turk',
         		'email' => 'tahaturk25@hotmail.com',
         		'password' => bcrypt('taha'),
+                'role' => 2
         	],
         ]);
     }
