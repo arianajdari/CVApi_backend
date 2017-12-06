@@ -41,6 +41,11 @@ Route::get('/getImage/{id}', [
 	'as' => 'getImage'
 ]);
 
+Route::post('/changePic', [
+	'uses' => 'DemoController@changePic',
+	'as' => 'changePic'
+]);
+
 
 Route::group(['middleware' => ['auth']], function() {
 	Route::get('/dashboard', [

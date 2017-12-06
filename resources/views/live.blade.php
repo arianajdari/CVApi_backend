@@ -60,14 +60,25 @@
     </div>
 </div>
 
+<div id="options"  class="row">
+    <div class="col-md-3 col-md-offset 3">
+        <input type="submit" value="grayscale" class="btn btn-primary" name="grayscale">
+        <input type="submit" value="transpose" class="btn btn-primary" name="transpose">
+    </div>
+</div>
+
+
 
         <script type="text/javascript" src="{{ URL::to('js/app.js') }}"></script>
         <script type="text/javascript">
             var url = '{{ route('uploadPic') }}';
+            var urlProcess = '{{ route('changePic') }}';
+            var token = '{{ Session::token() }}';
         </script>
 
         <script type="text/javascript">
 
+                var name;
 
 
                 $(".dropzone").on("dragover", function(event) {
@@ -96,20 +107,43 @@
                     var xhr = new XMLHttpRequest(),
                         formdata = new FormData();
 
-
                     formdata.append('file', files[0]);
 
-
                     xhr.onload = function() {
-                        var text = this.responseText;
+                        text = this.responseText;
                         text = jQuery.parseJSON(text);
                         $('.image').html("<img style='height:300px;' src='/getImage/"+ text.message +"'>");
                         $('#upload').css('display','none');
                         $('.image').css('display','block');
+                        $('#options').css('display', 'block');
+                        name = text.message;
+
                     }
                     xhr.open('post', url);
                     xhr.send(formdata);
                 }
+
+
+                $("input[type=submit]").click(function(e) {
+                    e.preventDefault();
+                    var islem = $(this).attr('value');
+
+                    $.ajax({
+                        url : urlProcess,
+                        async: false,
+                        method : 'POST',
+                        data: {
+                            islem : islem,
+                            id : name,
+                            _token : token
+                        },
+                        success: function(msg) {
+                            name = msg['id'];
+                            $('.image').html("<img style='height:300px;' src='/getImage/"+ msg['id'] +"'>");
+                        }
+                    });
+
+                });
 
         </script>
 
