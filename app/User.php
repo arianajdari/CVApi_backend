@@ -20,4 +20,11 @@ class User extends Authenticatable
         'name', 'surname' ,'email', 'password', 'address', 'phone',
     ];
 
+
+
+    public function app()
+    {
+        return $this->hasOne('App\App');
+    }
+
 }

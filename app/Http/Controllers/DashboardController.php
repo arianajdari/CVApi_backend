@@ -7,12 +7,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Documentation;
 use App\App as UserApp;
+use App\User;
 
 class DashboardController extends Controller
 {
     public function getDashboard()
     {
-    	return view('dashboard');
+        if(Auth::user()->hasApp === 1)
+            return view('dashboard', ['hasApp' => 1]);
+        else
+            return view('dashboard', ['hasApp' => 0]);
     }
 
     public function getDocumentation($id)
@@ -47,6 +51,10 @@ class DashboardController extends Controller
         $user_app->password = $password;
 
         $user_app->save();
+
+        $user = User::find(Auth::user()->id);
+        $user->hasApp = 1;
+        $user->save();
 
         return redirect()->back();
     }

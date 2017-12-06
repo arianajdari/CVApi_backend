@@ -45,8 +45,8 @@
 </nav>
 
 
-<div class="row">
-
+@if($hasApp === 0)
+  <div class="row">
 <div class="col-md-4 col-md-offset-4">
   <h3>Create an App</h3>
   <form method="post" action="{{ route('createApp') }}">
@@ -59,7 +59,28 @@
 </div>
 
 </div>
-
-
+@else
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <h3>Your App</h3>
+    <div class="form-group">
+      <label for="appname">App Name:</label>
+      <input class="form-control" type="text" name="appname" value="{{ Auth::user()->app->name }}"  readonly="readonly">
+    </div>
+    <div class="form-group">
+      <label for="pubkey">Public Key:</label>
+      <input class="form-control" type="text" name="pubkey" value="{{ Auth::user()->app->public_key }}" readonly="readonly">
+    </div>
+    <div class="form-group">
+      <label for="seckey">Secret Key:</label>
+      <input class="form-control" type="text" name="seckey" value="{{ Auth::user()->app->secret_key }}"  readonly="readonly">
+    </div>
+    <div class="form-group">
+      <label for="pass">Password:</label>
+      <input class="form-control" type="text" name="pass" value="{{ Auth::user()->app->password }}"  readonly="readonly">
+    </div>
+  </div>
+</div>
+@endif
 </body>
 </html>

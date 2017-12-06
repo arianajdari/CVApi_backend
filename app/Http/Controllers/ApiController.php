@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\App as UserApp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -18,15 +19,24 @@ class ApiController extends Controller
 
     public function processRequest(Request $request)
     {
-    	if ($request->file('image')) {
-    		$image = $request->file('image');
-            $options = $request->options;
-    		$image_name = uniqid() . '.png';
-    		$image->move($this->imagePath, $image_name);
-    		return $this->processFile($options, $this->tempImagePath ,$image_name);          
-    	}
-    	else
-    		return response()->json(['message' => 'No request was received'], 200);
+    	
+        $userApp = UserApp::where('public_key', $request->public_key)->get();
+
+        $public_key = $userApp[0]->public_key;
+        $secret_key = $userApp[0]->secret_key;
+        $password = $userApp[0]->password;
+
+        if($public_key === $request->public_key and $secret_key === $request->secret_key and $password === $request->password) {
+            if ($request->file('image')) {
+                $image = $request->file('image');
+                $options = $request->options;
+                $image_name = uniqid() . '.png';
+                $image->move($this->imagePath, $image_name);
+                return $this->processFile($options, $this->tempImagePath ,$image_name);          
+            } 
+            else
+                return response()->json(['message' => 'No request was received'], 200);
+        }        
     }
 
     protected function processFile($options, $tempImagePath ,$image_name)
