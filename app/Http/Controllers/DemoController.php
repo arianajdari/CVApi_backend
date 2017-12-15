@@ -50,4 +50,10 @@ class DemoController extends Controller
     	return response()->json(['id' => $new_name], 200);
     }
 
+    public function deleteImage(Request $request)
+    {
+        \Log::info($request->id);
+        File::delete(storage_path() . '/app/' . $request->id);
+    }
+
 }

@@ -74,6 +74,7 @@
             var url = '{{ route('uploadPic') }}';
             var urlProcess = '{{ route('changePic') }}';
             var token = '{{ Session::token() }}';
+            var urlClose = '{{ route('deleteImage') }}';
         </script>
 
         <script type="text/javascript">
@@ -143,6 +144,19 @@
                         }
                     });
 
+                });
+
+
+                $(window).on("unload", function() {
+                     $.ajax({
+                        url : urlClose,
+                        async: false,
+                        method: 'POST',
+                        data: {
+                            id : name,
+                            _token: token
+                        }
+                    });
                 });
 
         </script>

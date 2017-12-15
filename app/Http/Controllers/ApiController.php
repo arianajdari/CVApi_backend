@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\App as UserApp;
+use App\Log as UserLog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 class ApiController extends Controller
@@ -31,14 +33,14 @@ class ApiController extends Controller
                 $options = $request->options;
                 $image_name = uniqid() . '.png';
                 $image->move($this->imagePath, $image_name);
-                return $this->processFile($options, $this->tempImagePath ,$image_name);          
+                return $this->processFile($options, $this->tempImagePath ,$image_name, $userApp[0]);          
             } 
             else
                 return response()->json(['message' => 'No request was received'], 200);
         }        
     }
 
-    protected function processFile($options, $tempImagePath ,$image_name)
+    protected function processFile($options, $tempImagePath ,$image_name, $userApp)
     {
         $options = explode('|', $options);
         unset($options[count($options) - 1]);
@@ -60,6 +62,12 @@ class ApiController extends Controller
                     $execution_script .= $option[$i] . ' ';    
             \Log::info($execution_script);
             exec($execution_script);
+            
+            $userLog = new UserLog;
+            $userLog->process = $execution_script;
+            $userLog->user_id = $userApp->user->id;
+            $userLog->app_id =  $userApp->id;
+            $userLog->save();
         }
         $file = base64_encode(File::get(storage_path() . '/app/' . $image_name));
         File::delete(storage_path() . '/app/' . $image_name);

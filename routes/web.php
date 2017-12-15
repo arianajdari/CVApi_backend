@@ -46,6 +46,11 @@ Route::post('/changePic', [
 	'as' => 'changePic'
 ]);
 
+Route::post('/deleteImage', [
+	'uses' => 'DemoController@deleteImage',
+	'as' => 'deleteImage'
+]);
+
 
 Route::group(['middleware' => ['auth']], function() {
 	Route::get('/dashboard', [
