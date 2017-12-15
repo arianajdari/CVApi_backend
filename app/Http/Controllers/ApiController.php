@@ -61,6 +61,8 @@ class ApiController extends Controller
             \Log::info($execution_script);
             exec($execution_script);
         }
-        return ["photo" => base64_encode(File::get(storage_path() . '/app/' . $image_name))];
+        $file = base64_encode(File::get(storage_path() . '/app/' . $image_name));
+        File::delete(storage_path() . '/app/' . $image_name);
+        return ["photo" => $file];
     }
 }
