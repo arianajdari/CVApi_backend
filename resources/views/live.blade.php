@@ -61,10 +61,20 @@
 </div>
 
 <div id="options"  class="row">
+    <form method="post" action="#">
     <div class="col-md-3 col-md-offset 3">
         <input type="submit" value="grayscale" class="btn btn-primary" name="grayscale">
+        
         <input type="submit" value="transpose" class="btn btn-primary" name="transpose">
+
+        <input type="submit" value="pyrDown" class="btn btn-primary" name="pyrDown">
+        <input type="text" value="" placeholder="enter value" class="pyrDown" name="pyrDown_1">
+
+        <input type="submit" value="reduce" class="btn btn-primary" name="reduce">
+        <input type="text" value="" placeholder="enter reduce" class="reduce" name="reduce_1">
+        <input type="text" value="" placeholder="enter reduce" class="reduce" name="reduce_2">
     </div>
+    </form>
 </div>
 
 
@@ -128,7 +138,12 @@
                 $("input[type=submit]").click(function(e) {
                     e.preventDefault();
                     var islem = $(this).attr('value');
+                    var parametreler = $("."+islem);
+                    var islemler = [];
+                    for(var i = 0; i < $(parametreler).length; i++)
+                        islemler.push($($(parametreler)[i]).val());
 
+                    
                     $.ajax({
                         url : urlProcess,
                         async: false,
@@ -136,6 +151,7 @@
                         data: {
                             islem : islem,
                             id : name,
+                            islemler : islemler,
                             _token : token
                         },
                         success: function(msg) {
@@ -143,7 +159,6 @@
                             $('.image').html("<img style='height:300px;' src='/getImage/"+ msg['id'] +"'>");
                         }
                     });
-
                 });
 
 

@@ -37,9 +37,15 @@ class DemoController extends Controller
     	$tempImagePath = '/home/vagrant/www/laravel_api/storage/app/';
     	$pythonPath = "cd /home/vagrant/www/laravel_api/python && python ";
 
+        $islemler = $request->islemler;
     	$islem = $request->islem;
     	$id = $request->id;
     	$execution_script = $pythonPath . $islem. '.py ' . $tempImagePath . $id . ' ';
+
+        for($i = 0; $i < count($islemler); $i++)
+            $execution_script .= $islemler[$i] . " ";
+
+
     	\Log::info($execution_script);
     	exec($execution_script);
 
