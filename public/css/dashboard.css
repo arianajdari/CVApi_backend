@@ -1,0 +1,23 @@
+body{
+    margin: 100px;
+}
+.addnew{
+    display: none;
+}
+
+.created input[type="text"]{
+    opacity: 0.6;
+}
+.input-group-addon{
+    border: none;
+    border-left: 2px solid #D23938 ; 
+    border-bottom: 3px solid #D23938 ; 
+    border-radius: 1;   
+    background-color: transparent;
+    color: #D23938;
+}
+
+.form-group label {
+    text-align: center;
+    
+}

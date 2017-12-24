@@ -16,6 +16,10 @@ Route::get('/', function () {
 	return view('index');
 })->name('login');
 
+Route::get('/logreg', function() {
+	return view('logreg');
+})->name('logreg');
+
 Route::post('/register', [
 	'uses' => 'UserController@register',
 	'as' => 'register'

@@ -1,0 +1,255 @@
+/* GENERAL STYLE */
+
+body{
+	   font-family: 'Roboto', sans-serif;
+	   background-color: #f3f4f8;
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+hr{
+	padding:0;
+	margin: 10px;
+	border: 0; 
+	height: 1px; 
+	background-image: -webkit-linear-gradient(left, #f0f0f0, #59adeb, #f0f0f0);
+	background-image: -moz-linear-gradient(left, #f0f0f0, #59adeb, #f0f0f0);
+	background-image: -ms-linear-gradient(left, #f0f0f0, #59adeb, #f0f0f0);
+	background-image: -o-linear-gradient(left, #f0f0f0, #59adeb, #f0f0f0); 
+}
+/* NAVBAR STYLE */
+.navbar {
+	border-bottom: 1px solid #FF3333; 
+}
+
+
+.navbar-toggler:hover{
+	cursor: pointer;
+}
+
+
+.linkler .nav-link {
+	font-family: 'Arimo', sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;
+	padding-bottom: 5px; 
+	color: #FFFFFF !important;
+	text-transform: uppercase;
+	border-bottom: none;
+}
+
+.linkler .nav-link:hover{
+	margin-top: -1px; 
+	color: #ED4337 !important;
+	border-bottom: 1px solid red;
+	transition: color .5s ease; 
+
+}
+.joinUs{
+	color: #59adfd !important;
+	font-size: 20px;
+}
+
+.joinUs:hover{
+	color: white !important;
+}
+
+/* HEADAR STYLE */
+
+#headerSection {
+	 background: url('../images/header-top-image.jpg') no-repeat center center fixed;
+	 background-size: cover; 
+	 height: 100vh;
+}
+#headerSection .row{
+	height: 100vh;
+}
+
+#headerSection .overlay{
+	background-color: rgba(0,0,0,.2);
+}
+.overlay p{
+	font-size: 20px; 
+	text-align: center;
+	margin-bottom: 30px !important; 
+}
+.overlay button{
+	background-color:#59adeb !important ;
+	color: white;
+	border-color: transparent;
+	border-radius: 0 !important;
+	transition: color .3s ease; 
+}
+
+.overlay button:hover{
+	background-color:transparent !important ;
+	color: #59adfd;
+	border-color: #59adfd ;
+	transition: color .3s ease; 
+	cursor: pointer;
+}
+
+/* FEATURES STYLE */
+
+#features h3{
+	margin: 20px;
+}
+
+#features p{
+	font-size: 14px;
+}
+.feature-top{
+	transition: color .5s ease;
+}
+.feature-top:hover{
+	color: #59adfd;
+	cursor: pointer;
+}
+
+/* OUR HISTORY STYLE*/
+
+#ourHistory h2{
+	border-left: 6px solid #D23938; 
+}
+
+
+#ourHistory button{
+	background-color:transparent !important ;
+	color: #D23938;
+	border-color: #D23938 ;
+	transition: color .3s ease; 
+}
+
+#ourHistory button:hover{
+	background-color:#D23938 !important ;
+	color: white;
+	border-color: transparent;
+	border-radius: 0 !important;
+	transition: color .3s ease; 
+	cursor: pointer;
+}
+
+#ourHistory h2{
+	font-size: 32px;
+	color: #59adfd;
+	text-transform: uppercase;
+}
+#ourHistory p{
+	line-height: 28px;
+}
+
+/* CREATOR STYLE */
+
+#creators .card {
+	background-color: transparent;
+	width: 80%;
+	border: none;
+	opacity: 0.5;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+#creators .card:hover {
+	opacity: 1;
+}
+.fa-github{
+	color: #24292e;
+}
+.fa-github:hover{
+	opacity: 0.8;
+}
+
+/* WHAT CVApi DOES STYLE*/
+
+#whatCVApiDo{
+	background:  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('../images/whatCVApiDoes-image.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:  cover; 
+}
+#whatCVApiDo h2{
+	color: #D23938;
+}
+.fa-play-circle{
+	color: #D23938;
+}
+
+.fa-play-circle:hover{
+	color: #bb1919;
+}
+
+/* COLLABRATORS STYLE */
+#collabrators h2{
+	font-family: proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.fa-heart{
+	color: #d02129 !important;
+}
+
+/* TERSTIMONIAL STYLE*/
+
+#testimontial{
+	background:  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('../images/header-top-image3.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:  cover; 
+	position: relative;
+}
+
+.quote{
+	padding: 0;
+	color:rgba(89,173,253,.6);
+}
+
+
+.carousel-item{
+	padding-top:30px;
+}
+.carousel-item img{
+	opacity: 0.1;
+
+}
+.blockquote{
+	padding: 
+}
+.blockquote-footer{
+	color: #59adfd;
+}
+
+/* CONTACT US STYLE */
+
+#contact h2{
+	color: #59adfd;
+}
+
+#contact span{
+	border: none;
+	border-left: 2px solid #D23938 ; 
+	border-bottom: 3px solid #D23938 ; 
+	border-radius: 1;   
+	background-color: transparent;
+	color: #D23938;
+}
+
+#contact input[type="submit"]{
+	background-color:  #D23938;
+}
+
+#contact input[type="submit"]:hover{
+	cursor: pointer;
+}
+
+/* FOOTER STYLE */
+
+#main-footer{
+	
+	color: white;
+	background-color: black;
+	opacity: 0.9;
+}
+#main-footer p{
+	font-size: 12px;
+}
