@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-	if(\Illuminate\Support\Facades\Auth::user()) return redirect()->route('dashboard');
-	return view('index');
+Route::get('/', function (\Illuminate\Support\Facades\Auth $user) {
+	if($user::user() and $user::user()->rememberMe == 1) return redirect()->route('dashboard');
+	else {$user::logout(); return view('index');};
 })->name('login');
 
 Route::get('/logreg', function() {

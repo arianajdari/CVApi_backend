@@ -41,6 +41,14 @@ class UserController extends Controller
 	public function signin(Request $request)
 	{
 		if(Auth::attempt(['email' => $request['s_email'], 'password' => $request['s_password']])) {
+
+			$isRemember = $request->remember == 'on' ? true : false;
+			if($isRemember) {
+				$user = User::where('email', $request['s_email'])
+					->update([
+						'rememberMe' => 1
+					]);
+			}
 			return redirect()->route('dashboard');
 		} else {
 			return redirect()->back();
@@ -49,6 +57,8 @@ class UserController extends Controller
 
 	public function logout()
 	{
+		User::where('id', Auth::user()->id)->update(['rememberMe' => 0]);
+
 		Auth::logout();
 		return redirect()->route('login');
 	}

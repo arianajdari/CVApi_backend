@@ -53,7 +53,7 @@
                     </li>
                     <li class="nav-item">
                       <a href="{{ route('logreg') }}" class="sign-up">
-                        <button class="btn btn-outline-danger "> <span class="mb-0 h5">Sign Up</span></button>
+                        <button class="btn btn-outline-danger "> <span class="mb-0 h5">Sign In</span></button>
                       </a>
                     </li>
                   </ul>

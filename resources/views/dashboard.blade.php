@@ -37,7 +37,7 @@
           <div class="d-inline ml-auto">
               <ul class="navbar-nav mx-a">
                 <li class="nav-item">
-                  <a href="Documentation.html" class="nav-link  joinUs">Documentation</a>
+                  <a href="{{ route('getDocumentation', ['id' => 1]) }}" class="nav-link  joinUs">Documentation</a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ route('logout') }}" class="sign-up">
