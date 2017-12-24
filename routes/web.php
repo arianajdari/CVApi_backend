@@ -82,5 +82,15 @@ Route::group(['middleware' => ['auth']], function() {
 		'as' => 'createApp'
 	]);
 
+	Route::post('/viewApp', [
+		'uses' => 'DashboardController@viewApp',
+		'as' => 'viewApp'
+	]);
+
+	Route::get('/deleteApp/{id}', [
+		'uses' => 'DashboardController@deleteApp',
+		'as' => 'deleteApp'
+	]);
+
 });
 

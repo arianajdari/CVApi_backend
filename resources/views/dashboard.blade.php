@@ -40,7 +40,7 @@
                   <a href="Documentation.html" class="nav-link  joinUs">Documentation</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="sign-up">
+                  <a href="{{ route('logout') }}" class="sign-up">
                     <button class="btn btn-outline-danger "> <span class="mb-0 h5">Log Out</span></button>
                   </a>
                 </li>
@@ -67,22 +67,23 @@
             <tbody>
               @foreach($user_apps as $user_app)
                 <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{ $counter }}</th>
                 <td>{{ $user_app->name }}</td>
-                <td>{{ $user_app->created_ad }}</td>
+                <td>{{ $user_app->created_at }}</td>
                 <td class="text-center">
-                  <a href="#">
+                  <a class="viewApp" data-id="{{ $user_app->id }}" href="#">
                     <button class="btn btn-info">
                     <i class="fas fa-eye"></i>
                   </button>
                   </a>
-                  <a href="#">
-                    <button class=" btn btn-danger ">
+                  <a href="{{ route('deleteApp', ['id' => $user_app->id]) }}">
+                    <button  class="btn btn-danger delete_app">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                   </a>
                 </td>
               </tr>
+              @php $counter++ @endphp
               @endforeach
           </table>
         </div><!-- List  Apps -->
@@ -106,31 +107,31 @@
         </div> <!-- Create new App -->
       </div>
   
-      <div class="row created">
+      <div id="app_info" class="row created">
         <div class="col-md-6 mx-auto text-center">
-          <form action="" class="mt-3">
+          <form id="app_form"  action="" class="mt-3">
             <div class="form-group">
               <label for="name">App Name</label>
               <div class="input-group">
-                <input class="form-control" type="text" name="appname" value="{{ Auth::user()->app->name }}"  readonly="readonly">
+                <input id="app_name" class="form-control" type="text" name="appname" value=""  readonly="readonly">
               </div>
             </div>
             <div class="form-group">
                <label for="pubkey">Public Key</label>
               <div class="input-group ">
-                <input class="form-control" type="text" name="pubkey" value="{{ Auth::user()->app->public_key }}" readonly="readonly">
+                <input id="app_public_key" class="form-control" type="text" name="pubkey" value="" readonly="readonly">
               </div>
             </div>
              <div class="form-group">
                <label for="seckey">Secret Key</label>
               <div class="input-group ">
-               <input class="form-control" type="text" name="seckey" value="{{ Auth::user()->app->secret_key }}"  readonly="readonly">
+               <input id="app_secret_key" class="form-control" type="text" name="seckey" value=""  readonly="readonly">
               </div>
             </div>
              <div class="form-group">
                <label for="pass">Password</label>
               <div class="input-group ">
-                <input class="form-control" type="text" name="pass" value="{{ Auth::user()->app->password }}"  readonly="readonly">
+                <input id="app_password" class="form-control" type="text" name="pass" value=""  readonly="readonly">
               </div>
             </div>
           </form>
@@ -145,5 +146,38 @@
     <script type="text/javascript" src="{{ URL::to('js/fontawesome-all.min.js') }}"></script> 
     <script type="text/javascript" src="{{ URL::to('js/bootstrap.min.js') }}"></script> 
     <script type="text/javascript" src="{{ URL::to('js/smooth-scroll.min.js') }}"></script> 
-    <script  type="text/javascript" src="{{ URL::to('js/dashboard.js') }}"></script> 
+    <script  type="text/javascript" src="{{ URL::to('js/dashboard.js') }}"></script>
+    <script type="text/javascript">
+      var url = "{{ route('viewApp') }}";
+      var _token = "{{ Session::token() }}";
+    </script>
+    <script type="text/javascript">
+        $("#app_info").toggle();
+
+        $('.viewApp').click(function(e) {
+          e.preventDefault();
+          var id = this.dataset.id;
+
+          $.ajax({
+            method: 'POST',
+            async: true,
+            url: url,
+            data: {
+              id: id,
+              _token: _token
+            }
+          }).done(function(msg) {
+            updateView(msg[1]);
+          });
+        });
+
+        var updateView = function(data) {
+          $('#app_name').val(data.name);
+          $('#app_public_key').val(data.public_key);
+          $('#app_secret_key').val(data.secret_key);
+          $('#app_password').val(data.password);
+          $("#app_info").css('display', 'block');
+        };
+
+    </script> 
   </body>

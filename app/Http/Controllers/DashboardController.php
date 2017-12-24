@@ -14,7 +14,7 @@ class DashboardController extends Controller
     public function getDashboard()
     {
         $user_apps = UserApp::where('user_id', Auth::user()->id)->get();
-        return view('dashboard', ['user_apps' => $user_apps]);
+        return view('dashboard', ['user_apps' => $user_apps, 'counter' => 1]);
     }
 
     public function getDocumentation($id)
@@ -54,6 +54,18 @@ class DashboardController extends Controller
         $user->hasApp = 1;
         $user->save();
 
+        return redirect()->back();
+    }
+
+    public function viewApp(Request $request)
+    {
+        $user_app = UserApp::where('id', $request->id)->get();
+        return response()->json(['msg', $user_app[0]], 200);
+    }
+
+    public function deleteApp($id)
+    {
+        $userApp = UserApp::where('id', $id)->delete();
         return redirect()->back();
     }
 }

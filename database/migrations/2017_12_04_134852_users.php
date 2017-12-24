@@ -25,6 +25,7 @@ class Users extends Migration
             $table->integer('hasApp')->default(0);
             $table->timestamps();
             $table->rememberToken();
+            $table->integer('rememberMe')->default(0);
         });
     }
 
