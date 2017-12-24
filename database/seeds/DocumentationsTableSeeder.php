@@ -19,7 +19,7 @@ class DocumentationsTableSeeder extends Seeder
     		'prototype' => 'public CVApi\CVApi adaptiveThreshold($type)',
     		'explanation' => 'This function receives 1 parameter which determines thresholding of an image',
     		'parameters' => '<ul><li>$type - type of thresholding</li></ul>',
-    		'example' => '$image = CVApi::make(["image.jpg"])->adaptiveThreshold(1); <br>$image->save();',
+    		'example' => '$image = CVApi::make(["image.jpg"])->adaptiveThreshold(1); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul><li><a class='callFunction' href='#'>threshold</a></li></ul>",
     		], [
     		'name' => 'bgrToGray',
@@ -27,7 +27,7 @@ class DocumentationsTableSeeder extends Seeder
     		'prototype' => 'public CVApi\CVApi bgrToGray(void)',
     		'explanation' => 'This function receives a coloured BGR image (3-dimensional array) and converts it to grayscale version',
     		'parameters' => '<ul><li>void</li></ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->bgrToGray(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->bgrToGray(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
     			<li><a class='callFunction' href='#'>bgrToHsv</a></li>
     			<li><a class='callFunction' href='#'>bgrToRgb</a></li>
@@ -44,7 +44,7 @@ class DocumentationsTableSeeder extends Seeder
     		'prototype' => 'public CVApi\CVApi bgrToHsv(void)',
     		'explanation' => 'This function receives a coloured BGR image (3-dimensional array) and converts it to HSV version',
     		'parameters' => '<ul><li>void</li></ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->bgrToHsv(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->bgrToHsv(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bgrToGray</a></li>
 					<li><a class='callFunction' href='#'>bgrToRgb</a></li>
@@ -63,7 +63,7 @@ class DocumentationsTableSeeder extends Seeder
     		'prototype' => 'public CVApi\CVApi bgrToRgb(void)',
     		'explanation' => 'This function receives a coloured BGR image (3-dimensional array) and converts it to RGB version',
     		'parameters' => '<ul><li>void</li></ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->bgrToRgb(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->bgrToRgb(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bgrToGray</a></li>
 					<li><a class='callFunction' href='#'>bgrToHsv</a></li>
@@ -82,7 +82,7 @@ class DocumentationsTableSeeder extends Seeder
     		'prototype' => 'public CVApi\CVApi bilateralBlur(void)',
     		'explanation' => 'This function blurs an image',
     		'parameters' => '<ul><li>void</li></ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->bgrToRgb(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->bgrToRgb(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>blur</a></li>
 					<li><a class='callFunction' href='#''>gaussianBlur</a></li>
@@ -100,7 +100,7 @@ class DocumentationsTableSeeder extends Seeder
 						$kernel_size - size of the kernel
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->blackHat(3); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->blackHat(3); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>dilate</a></li>
 					<li><a class='callFunction' href='#'>erode</a></li>
@@ -119,7 +119,7 @@ class DocumentationsTableSeeder extends Seeder
 						$kernel_size - kernel size value	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->blur(3); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->blur(3); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bilateralBlur</a></li>
 					<li><a class='callFunction' href='#'>gaussianBlur</a></li>
@@ -137,7 +137,7 @@ class DocumentationsTableSeeder extends Seeder
 						$value - brightness value (0 - 255)	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->brightness(230); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->brightness(230); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#''>darken</a></li>
 				</ul>",
@@ -151,7 +151,7 @@ class DocumentationsTableSeeder extends Seeder
 						$kernel_size - size of the kernel
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->closing(3); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->closing(3); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>dilate</a></li>
 					<li><a class='callFunction' href='#'>erode</a></li>
@@ -179,7 +179,7 @@ class DocumentationsTableSeeder extends Seeder
 						$x2 - second point\'s x coordinate
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->crop(200, 450, 200, 450); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->crop(200, 450, 200, 450); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>pyrDown</a></li>
 					<li><a class='callFunction' href='#'>pyrUp</a></li>
@@ -217,7 +217,7 @@ class DocumentationsTableSeeder extends Seeder
 						$iterations - number of times that operation will be performed
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->dilate(3, 2); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->dilate(3, 2); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>erode</a></li>
 					<li><a class='callFunction' href='#'>opening</a></li>
@@ -242,7 +242,7 @@ class DocumentationsTableSeeder extends Seeder
 						$interpolation - interpolation method
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->enlarge(0.5, 0.5, 0); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->enlarge(0.5, 0.5, 0); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>crop</a></li>
 					<li><a class='callFunction' href='#'>pyrDown</a></li>
@@ -266,7 +266,7 @@ class DocumentationsTableSeeder extends Seeder
 						$iterations - number of times that operation will be performed
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->erode(3, 2); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->erode(3, 2); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>dilate</a></li>
 					<li><a class='callFunction' href='#'>opening</a></li>
@@ -285,7 +285,7 @@ class DocumentationsTableSeeder extends Seeder
 						$kernel_size - kernel size value	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->gaussianBlur(3); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->gaussianBlur(3); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bilateralBlur</a></li>
 					<li><a class='callFunction' href='#'>blur</a></li>
@@ -303,7 +303,7 @@ class DocumentationsTableSeeder extends Seeder
 						void	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->grayscale(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->grayscale(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bgrToGray</a></li>
 					<li><a class='callFunction' href='#'>bgrToHsv</a></li>
@@ -326,7 +326,7 @@ class DocumentationsTableSeeder extends Seeder
 						void	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->grayToBgr(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->grayToBgr(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bgrToGray</a></li>
 					<li><a class='callFunction' href='#'>bgrToHsv</a></li>
@@ -349,7 +349,7 @@ class DocumentationsTableSeeder extends Seeder
 						void	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->grayToRgb(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->grayToRgb(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bgrToGray</a></li>
 					<li><a class='callFunction' href='#'>bgrToHsv</a></li>
@@ -378,7 +378,7 @@ class DocumentationsTableSeeder extends Seeder
 						$range_max - sets the maximum range of the colour channels
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->histogram(10, 100, 200); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->histogram(10, 100, 200); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>imageChannels</a></li>
 				</ul>",
@@ -392,7 +392,7 @@ class DocumentationsTableSeeder extends Seeder
 						void	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->hsvToBgr(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->hsvToBgr(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bgrToGray</a></li>
 					<li><a class='callFunction' href='#'>bgrToHsv</a></li>
@@ -415,7 +415,7 @@ class DocumentationsTableSeeder extends Seeder
 						void	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->hsvToRgb(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->hsvToRgb(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bgrToGray</a></li>
 					<li><a class='callFunction' href='#'>bgrToHsv</a></li>
@@ -438,7 +438,7 @@ class DocumentationsTableSeeder extends Seeder
 						$array - an array specifying which image channels to be extracted. \'B\' stands for blue, \'G\' for green and \'R\' for red.	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->imageChannels([\'B\', \'G\', \'R\']); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->imageChannels([\'B\', \'G\', \'R\']); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>histogram</a></li>
 				</ul>",
@@ -452,7 +452,7 @@ class DocumentationsTableSeeder extends Seeder
 						$size - magnitude of the blur	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->medianBlur(3); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->medianBlur(3); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bilateralBlur</a></li>
 					<li><a class='callFunction' href='#'>blur</a></li>
@@ -470,7 +470,7 @@ class DocumentationsTableSeeder extends Seeder
 						$kernel_size - size of the kernel
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->morphGradient(3); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->morphGradient(3); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>dilate</a></li>
 					<li><a class='callFunction' href='#'>erode</a></li>
@@ -489,7 +489,7 @@ class DocumentationsTableSeeder extends Seeder
 						$box_size - box size value	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->normalBlur(3); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->normalBlur(3); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bilateralBlur</a></li>
 					<li><a class='callFunction' href='#'>blur</a></li>
@@ -507,7 +507,7 @@ class DocumentationsTableSeeder extends Seeder
 						$kernel_size - size of the kernel
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->opening(3); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->opening(3); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>dilate</a></li>
 					<li><a class='callFunction' href='#'>erode</a></li>
@@ -526,7 +526,7 @@ class DocumentationsTableSeeder extends Seeder
 						$times - number of iterations
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->pyrDown(2); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->pyrDown(2); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>crop</a></li>
 					<li><a class='callFunction' href='#'>pyrUp</a></li>
@@ -547,7 +547,7 @@ class DocumentationsTableSeeder extends Seeder
 						$times - number of iterations
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->pyrUp(2); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->pyrUp(2); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>crop</a></li>
 					<li><a class='callFunction' href='#'>pyrDown</a></li>
@@ -571,7 +571,7 @@ class DocumentationsTableSeeder extends Seeder
 						$fy - y-axis aspect-ratio
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->reduce(0.5, 0.5); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->reduce(0.5, 0.5); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>crop</a></li>
 					<li><a class='callFunction' href='#'>pyrDown</a></li>
@@ -598,7 +598,7 @@ class DocumentationsTableSeeder extends Seeder
 						$interpolation - interpolation method
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->resize(400, 350, 0); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->resize(400, 350, 0); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>crop</a></li>
 					<li><a class='callFunction' href='#'>pyrDown</a></li>
@@ -619,7 +619,7 @@ class DocumentationsTableSeeder extends Seeder
 						void	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->rgbToBgr(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->rgbToBgr(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bgrToGray</a></li>
 					<li><a class='callFunction' href='#'>bgrToHsv</a></li>
@@ -642,7 +642,7 @@ class DocumentationsTableSeeder extends Seeder
 						void	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->rgbToGray(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->rgbToGray(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bgrToGray</a></li>
 					<li><a class='callFunction' href='#'>bgrToHsv</a></li>
@@ -665,7 +665,7 @@ class DocumentationsTableSeeder extends Seeder
 						void	
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->rgbToHsv(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->rgbToHsv(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bgrToGray</a></li>
 					<li><a class='callFunction' href='#'>bgrToHsv</a></li>
@@ -694,7 +694,7 @@ class DocumentationsTableSeeder extends Seeder
 						$angle - the angle of the rotation
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->rotate(50, 50, 45); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->rotate(50, 50, 45); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>crop</a></li>
 					<li><a class='callFunction' href='#'>pyrDown</a></li>
@@ -715,7 +715,7 @@ class DocumentationsTableSeeder extends Seeder
 						void
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->sharpen(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->sharpen(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>bilateralBlur</a></li>
 					<li><a class='callFunction' href='#'>blur</a></li>
@@ -739,7 +739,7 @@ class DocumentationsTableSeeder extends Seeder
 						$type - type of thresholding
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->threshold(127, 255, 0); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->threshold(127, 255, 0); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li>
 						<a class='callFunction' href='#'>adaptiveThreshold</a>
@@ -755,7 +755,7 @@ class DocumentationsTableSeeder extends Seeder
 						$kernel_size - size of the kernel
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->topHat(3); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->topHat(3); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>dilate</a></li>
 					<li><a class='callFunction' href='#'>erode</a></li>
@@ -777,7 +777,7 @@ class DocumentationsTableSeeder extends Seeder
 						$y - translate according to y-axis
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->translate(50, 50); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->translate(50, 50); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>crop</a></li>
 					<li><a class='callFunction' href='#'>pyrDown</a></li>
@@ -798,7 +798,7 @@ class DocumentationsTableSeeder extends Seeder
 						void
 					</li>
 				</ul>',
-    		'example' => '$image = CVApi::make("image.jpg")->transpose(); <br>$image->save();',
+    		'example' => '$image = CVApi::make("image.jpg")->transpose(); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul>
 					<li><a class='callFunction' href='#'>crop</a></li>
 					<li><a class='callFunction' href='#'>pyrDown</a></li>

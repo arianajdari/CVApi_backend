@@ -178,6 +178,5 @@
           $('#app_password').val(data.password);
           $("#app_info").css('display', 'block');
         };
-
     </script> 
   </body>
