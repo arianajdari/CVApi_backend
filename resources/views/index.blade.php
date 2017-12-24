@@ -1,8 +1,7 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CVApi</title>
 
@@ -13,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Arimo|PT+Sans+Narrow" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/bootstrap.css') }}"> 
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/bootstrap.min.css') }}"> 
     <link rel="stylesheet" type="text/css" href="{{ URL::to('css/fontawesome.min.css') }}"> 
     <link rel="stylesheet" type="text/css" href="{{ URL::to('css/main.css') }}"> 
 
@@ -39,7 +38,7 @@
                     <a href="#aboutus-scroll" class="nav-link ">About Us</a> 
                   </li>
                   <li class="nav-item">
-                    <a href="#ourworks-scroll" class="nav-link ">Our Works</a> 
+                    <a href="#ourworks-scroll" class="nav-link ">Our Work</a> 
                   </li>
                   <li class="nav-item">
                     <a href="#contact-scroll" class="nav-link ">Contact</a> 
@@ -70,12 +69,8 @@
           <div class="row text-center mainContent">
             <div class="col my-auto">
               <h1><span class="text-white" >CVApi</span> </h1>
-              <h1 style="color: #D23938;">Image Prossesing With PHP</h1>
-              <p class="text-muted mx-auto px-2" > <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate </em></p>
+              <h1 style="color: #D23938;">Image Processing With PHP</h1>
+              <p class="text-muted mx-auto px-2" > <em>CVApi is an abstraction layer which builds upon web technologies offering modern and stunning computer vision functionality by leveraging parallelism, innovation and user-friendly interface. By starting relatively simple with offering of basic functionality such as in-demand image manipulations, CVApi scales both horizontally and vertically by supporting a wide range of architectures and including cutting-edge achievements done in computer vision into it's modules.</em></p>
               <a href="demo.html">
                 <button class="btn btn-lg btn-primary "><b>Try Me</b></button>
               </a>
@@ -94,9 +89,8 @@
               <i class="fab fa-3x fa-ravelry"></i>
               <h3>SLEEK SYNTAX</h3>
             </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex </p>
+              <p style="text-align:justify;">Leveraging newest PHP features, CVApi offers sleek syntax which is easily 
+              integrateable into existing PHP code or any other PHP framework.</p>
           </div>
 
            <div class="col-md-3 text-center">
@@ -105,9 +99,8 @@
                 <i class="fa fa-3x fa-cog"></i>
                 <h3>CLEAN CODE</h3>
               </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex </p>
+              <p style="text-align:justify;">Ever had headache while trying to find your way inside cramped up PHP code. By using KISS system, 
+              we made sure that whatever the needs, the resulting code is going to be clean and understandable</p>
             </div>
           </div>
 
@@ -118,9 +111,8 @@
                 <h3>SAVE TİME</h3>
               </div>
               
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex </p>
+              <p style="text-align:justify;">Have a blog website, a forum or image service site? You are bound to spend a lot of time integrating
+              neccessary image handling modules. Why not just let CVApi handle image proccessing, while letting you focus on developing the app</p>
             </div>
           </div>
 
@@ -130,9 +122,7 @@
                 <i class="fa fa-3x fa-podcast"></i>
                 <h3>FREE SUPPORT</h3>
               </div>
-              <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisiut aliquip ex </p>
+              <p style="text-align:justify;">Stuck inside endless loop or just can't get CVApi work the way you imagined!? Feel free to contact our support staff for help!</p>
             </div>
           </div>
         </div>
@@ -148,12 +138,7 @@
           </div>
           <div class="col-md-6 historyRight">
             <h2 class=" pl-4">Our History</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p></p>
             <button class="btn mt-4">Check Our Work</button>
           </div>
         </div></section>
@@ -167,7 +152,7 @@
               <div class="col-md-6 text-center creator1">
                 <div class="card text-center mx-auto">
                   <div class="card-block">
-                    <img src="images/logo2.png" class="img-fluid rounded-circle my-4 img-responsive" width="30%">
+                    <img src="images/arian.png" class="img-fluid rounded-circle my-4 img-responsive" width="30%">
                     <h3>Arian Ajdari</h3>
                     <h5 class="text-muted">Co-Founder/Developer</h5>
                     <p>Loves everything going on 4 wheels. In free time, dreams about becoming a pilot.</p>
@@ -195,7 +180,7 @@
                   <img src="images/taha.jpg" class="img-fluid rounded-circle my-4 img-responsive" width="30%">
                    <h3>Taha Türk</h3>
                   <h5 class="text-muted">Co-Founder/Developer</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                  <p>Computer Geek since birth. Can't decide between Windows or Linux, though!</p>
 
                   <div class="d-flex flex-row justify-content-center" >
                     <div class="p-4">
@@ -226,7 +211,7 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <h2>What Are We Doing?</h2>
-            <p class="text-muted"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</em></p>
+            <p class="text-muted"><em>Check our short intro into CVApi</em></p>
           </div>
 
           <div class="col-md-6 text-center mx-auto">
@@ -409,5 +394,8 @@
     <script type="text/javascript" src="{{ URL::to('js/bootstrap.min.js') }}"></script> 
     <script type="text/javascript" src="{{ URL::to('js/smooth-scroll.min.js') }}"></script> 
     <script  type="text/javascript" src="{{ URL::to('js/main.js') }}"></script> 
+
+
+
 </body>
 </html>
