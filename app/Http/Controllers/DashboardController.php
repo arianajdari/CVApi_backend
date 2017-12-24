@@ -13,10 +13,8 @@ class DashboardController extends Controller
 {
     public function getDashboard()
     {
-        if(Auth::user()->hasApp === 1)
-            return view('dashboard', ['hasApp' => 1]);
-        else
-            return view('dashboard', ['hasApp' => 0]);
+        $user_apps = UserApp::where('user_id', Auth::user()->id)->get();
+        return view('dashboard', ['user_apps' => $user_apps]);
     }
 
     public function getDocumentation($id)
