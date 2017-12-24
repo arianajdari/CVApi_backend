@@ -138,7 +138,7 @@
           </div>
           <div class="col-md-6 historyRight">
             <h2 class=" pl-4">Our History</h2>
-            <p></p>
+            <p style="text-align:justify;">Computer Vision has become a powerhouse since last 10 years. Many modern devices make an extensive use of computer vision solutions such as opening your phone with face, face and eye recognition, applying filters to images, face mashing and so on...<br>We at CVApi thought of building necessary tools to make computer vision more accessiable to everyone. By offloading heavy-resource tasks to our servers and providing engaging tools to developers, we strive to make computer vision easy and understandable to everyone. This is a journey in which all we take a place.</p>
             <button class="btn mt-4">Check Our Work</button>
           </div>
         </div></section>
@@ -157,20 +157,15 @@
                     <h5 class="text-muted">Co-Founder/Developer</h5>
                     <p>Loves everything going on 4 wheels. In free time, dreams about becoming a pilot.</p>
 
-                    <div class="d-flex flex-row justify-content-center">
-                      <div class="p-4">
-                        <a href="#"><i class="fab fa-2x fa-facebook"></i></a>
-                      </div>
-                      <div class="p-4">
-                        <a href="#"><i class="fab fa-2x fa-twitter"></i></a>
-                      </div>
-                      <div class="p-4">
-                        <a href="#"><i class="fab fa-2x fa-linkedin"></i></a>
-                      </div>
-                      <div class="p-4">
-                        <a href="#"><i class="fab fa-2x fa-github"></i></a>
-                      </div>
+                    <div class="d-flex flex-row justify-content-center" >
+                    <div class="p-4">
+                      <div id="ourworks-scroll" ></div>
+                      <a target="_blank" href="https://www.facebook.com/arian.ajdari.5"><i class="fab fa-2x fa-facebook"></i></a>
                     </div>
+                    <div class="p-4">
+                      <a target="_blank" href="https://github.com/arianajdari"><i class="fab fa-2x fa-github"></i></a>
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -185,16 +180,16 @@
                   <div class="d-flex flex-row justify-content-center" >
                     <div class="p-4">
                       <div id="ourworks-scroll" ></div>
-                      <a href="#"><i class="fab fa-2x fa-facebook"></i></a>
+                      <a target="_blank" href="https://www.facebook.com/paspasci.deep"><i class="fab fa-2x fa-facebook"></i></a>
                     </div>
                     <div class="p-4">
                       <a href="#"><i class="fab fa-2x fa-twitter"></i></a>
                     </div>
                     <div class="p-4">
-                      <a href="#"><i class="fab fa-2x fa-linkedin"></i></a>
+                      <a target="_blank" href="https://tr.linkedin.com/in/taha-türk-820b6988"><i class="fab fa-2x fa-linkedin"></i></a>
                     </div>
                     <div class="p-4">
-                      <a href="#"><i class="fab fa-2x fa-github"></i></a>
+                      <a target="_blank" href="https://github.com/th-turk"><i class="fab fa-2x fa-github"></i></a>
                     </div>
                   </div>
                 </div>
@@ -317,13 +312,12 @@
         <div class="row">
           <div class="col-lg-6">
             <h2>CONTACT US</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore.</p>
+            <p>You can use our contact form to reach us by e-mail.</p>
             <h4>Address</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna .</p>
+            <p>
+              Gazi University, Faculty of Engineering<br>Eti Mahallesi, Ali Suavi Sokak, Çankaya/Ankara</p>
             <h4>Email</h4>
-            <p>aaaa@hotmail.com</p>
+            <p>cvapi_support@cvapi.com</p>
             <h4>Phone</h4>
             <p>999 999 9999</p>
             <div class="d-flex flex-row">
@@ -334,7 +328,7 @@
                 <a href="#"><i class="fab fa-2x fa-twitter"></i></a>
               </div>
                <div class="p-2">
-                <a href="#"><i class="fab fa-2x fa-github"></i></a>
+                <a target="_blank" href="https://github.com/arianajdari/CVApi"><i class="fab fa-2x fa-github"></i></a>
               </div>
             </div>
           </div>
