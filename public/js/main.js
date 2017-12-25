@@ -17,34 +17,35 @@ $(function() {
    });
 });
 
+var scroll = new SmoothScroll('a[href*="#"]');
 
- var scroll = new SmoothScroll('a[href*="#"]');
+ window.sr = ScrollReveal();
+  sr.reveal('.mainContent',{
+    duration: 3000
+  });
 
-         window.sr = ScrollReveal();
-        sr.reveal('.mainContent',{
-          duration: 3000
-        });
+  sr.reveal('.historyLeft',{
+    duration: 3000,
+    origin: 'left',
+    viewFactor: 0.3
+  });
 
-        sr.reveal('.historyLeft',{
-          duration: 3000,
-          origin: 'left',
-          viewFactor: 0.3
-        });
+  sr.reveal('.historyRight',{
+    duration: 3000,
+    origin: 'right',
+    viewFactor: 0.3
+  });
 
-        sr.reveal('.historyRight',{
-          duration: 3000,
-          origin: 'right',
-          viewFactor: 0.3
-        });
+  sr.reveal('.creator1',{
+    duration: 2000,
+    origin: 'bottom',
+    viewFactor: 0.1
+  });
+  sr.reveal('.creator2',{
+    duration: 2000,
+    delay:500,
+    origin: 'bottom',
+    viewFactor: 0.2
+  });
 
-        sr.reveal('.creator1',{
-          duration: 2000,
-          origin: 'bottom',
-          viewFactor: 0.1
-        });
-        sr.reveal('.creator2',{
-          duration: 2000,
-          delay:500,
-          origin: 'bottom',
-          viewFactor: 0.2
-        });
+

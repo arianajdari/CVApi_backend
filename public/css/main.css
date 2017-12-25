@@ -22,7 +22,8 @@ hr{
 }
 /* NAVBAR STYLE */
 .navbar {
-	border-bottom: 1px solid #FF3333; 
+	border-bottom: 1px solid #FF3333;
+	z-index: 10000000; 
 }
 
 

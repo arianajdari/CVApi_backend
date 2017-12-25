@@ -71,7 +71,7 @@
               <h1><span class="text-white" >CVApi</span> </h1>
               <h1 style="color: #D23938;">Image Processing With PHP</h1>
               <p class="text-muted mx-auto px-2" > <em>CVApi is an abstraction layer which builds upon web technologies offering modern and stunning computer vision functionality by leveraging parallelism, innovation and user-friendly interface. By starting relatively simple with offering of basic functionality such as in-demand image manipulations, CVApi scales both horizontally and vertically by supporting a wide range of architectures and including cutting-edge achievements done in computer vision into it's modules.</em></p>
-              <a href="demo.html">
+              <a href="{{ route('liveDemo')}}">
                 <button class="btn btn-lg btn-primary "><b>Try Me</b></button>
               </a>
             </div>

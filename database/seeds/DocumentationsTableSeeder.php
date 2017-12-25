@@ -15,15 +15,15 @@ class DocumentationsTableSeeder extends Seeder
     	DB::table('documentations')->insert([
     		[
     		'name' => 'adaptiveThreshold',
-    		'description' => 'adaptiveThreshold - adaptive binary thresholding of an image',
+    		'description' => 'adaptive binary thresholding of an image',
     		'prototype' => 'public CVApi\CVApi adaptiveThreshold($type)',
     		'explanation' => 'This function receives 1 parameter which determines thresholding of an image',
-    		'parameters' => '<ul><li>$type - type of thresholding</li></ul>',
+    		'parameters' => 'type of thresholding</li></ul>',
     		'example' => '$image = CVApi::make(["image.jpg"])->adaptiveThreshold(1); <br>$image->results(function($image) { $image->save(["new_image.jpg"]); });',
     		'links' => "<ul><li><a class='callFunction' href='#'>threshold</a></li></ul>",
     		], [
     		'name' => 'bgrToGray',
-    		'description' => 'bgrToGray - convert an BGR image to grayscale',
+    		'description' => 'convert an BGR image to grayscale',
     		'prototype' => 'public CVApi\CVApi bgrToGray(void)',
     		'explanation' => 'This function receives a coloured BGR image (3-dimensional array) and converts it to grayscale version',
     		'parameters' => '<ul><li>void</li></ul>',
@@ -40,7 +40,7 @@ class DocumentationsTableSeeder extends Seeder
 				<li><a class='callFunction' href='#'>rgbToGray</a></li><li><a class='callFunction' href='#'>rgbToHsv</a></li></ul>",
     		], [
     		'name' => 'bgrToHsv',
-    		'description' => 'bgrToHsv - convert an BGR image to HSV',
+    		'description' => 'convert an BGR image to HSV',
     		'prototype' => 'public CVApi\CVApi bgrToHsv(void)',
     		'explanation' => 'This function receives a coloured BGR image (3-dimensional array) and converts it to HSV version',
     		'parameters' => '<ul><li>void</li></ul>',
@@ -59,7 +59,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'bgrToRgb',
-    		'description' => 'bgrToRgb - convert an BGR image to RGB',
+    		'description' => 'convert an BGR image to RGB',
     		'prototype' => 'public CVApi\CVApi bgrToRgb(void)',
     		'explanation' => 'This function receives a coloured BGR image (3-dimensional array) and converts it to RGB version',
     		'parameters' => '<ul><li>void</li></ul>',
@@ -78,7 +78,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'bilateralBlur',
-    		'description' => 'bilateralBlur - blurs an image',
+    		'description' => 'blurs an image',
     		'prototype' => 'public CVApi\CVApi bilateralBlur(void)',
     		'explanation' => 'This function blurs an image',
     		'parameters' => '<ul><li>void</li></ul>',
@@ -92,7 +92,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'blackHat',
-    		'description' => 'blackHat - perform blackHat on an image',
+    		'description' => 'perform blackHat on an image',
     		'prototype' => 'public CVApi\CVApi blackHat($kernel_size = 3)',
     		'explanation' => 'This function receives 1 parameter which perform blackHat on an image',
     		'parameters' => '<ul>
@@ -111,7 +111,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'blur',
-    		'description' => 'blur - blurs an image',
+    		'description' => 'blurs an image',
     		'prototype' => 'public CVApi\CVApi blur($kernel_size)',
     		'explanation' => 'This function receives 1 parameter which specifies the size of the kernel',
     		'parameters' => '<ul>
@@ -129,7 +129,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'brightness',
-    		'description' => 'brightness - brighten an image',
+    		'description' => 'brighten an image',
     		'prototype' => 'public CVApi\CVApi brightness($value)',
     		'explanation' => 'This function receives 1 parameter which brighten an image',
     		'parameters' => '<ul>
@@ -143,7 +143,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'closing',
-    		'description' => 'closing - perform erosion followed by dilation on an image',
+    		'description' => 'perform erosion followed by dilation on an image',
     		'prototype' => 'public CVApi\CVApi closing($kernel_size = 3)',
     		'explanation' => 'This function receives 1 parameter which performs closing on an image',
     		'parameters' => '<ul>
@@ -162,7 +162,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'crop',
-    		'description' => 'crop - crops an image',
+    		'description' => 'crops an image',
     		'prototype' => 'public CVApi\CVApi crop($y1, $y2, $x1, $x2)',
     		'explanation' => 'This function receives 4 parameters which crops an image',
     		'parameters' => '<ul>
@@ -192,7 +192,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'darken',
-    		'description' => 'darken - darkens an image',
+    		'description' => 'darkens an image',
     		'prototype' => 'public CVApi\CVApi darken($value)',
     		'explanation' => 'This function receives 1 parameter which darkens an image',
     		'parameters' => '<ul>
@@ -206,7 +206,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'dilate',
-    		'description' => 'dilate - perform dilation on an image',
+    		'description' => 'perform dilation on an image',
     		'prototype' => 'public CVApi\CVApi dilate($kernel_size = 3, $iterations = 1)',
     		'explanation' => 'This function receives 2 parameters which perform dilation on an image',
     		'parameters' => '<ul>
@@ -228,7 +228,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'enlarge',
-    		'description' => 'enlarge - enlarge an image',
+    		'description' => 'enlarge an image',
     		'prototype' => 'public CVApi\CVApi enlarge($fx, $fy, $interpolation)',
     		'explanation' => 'This function receives 3 parameters which enlarge an image (without skew)',
     		'parameters' => '<ul>
@@ -255,7 +255,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'erode',
-    		'description' => 'erode - performs erosion an image',
+    		'description' => 'performs erosion an image',
     		'prototype' => 'public CVApi\CVApi erode($kernel_size = 3, $iterations = 1)',
     		'explanation' => 'This function receives 2 parameters which perform erosion on an image',
     		'parameters' => '<ul>
@@ -277,7 +277,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'gaussianBlur',
-    		'description' => 'gaussianBlur - blurs an image',
+    		'description' => 'blurs an image',
     		'prototype' => 'public CVApi\CVApi gaussianBlur($kernel_size)',
     		'explanation' => 'This function receives 1 parameter which specifies the size of the kernel',
     		'parameters' => '<ul>
@@ -295,7 +295,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'grayscale',
-    		'description' => 'grayscale - convert an image to grayscale',
+    		'description' => 'convert an image to grayscale',
     		'prototype' => 'public CVApi\CVApi grayscale(void)',
     		'explanation' => 'This function receives a coloured image (3-dimensional array) and converts it to grayscale version',
     		'parameters' => '<ul>
@@ -318,7 +318,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'grayToBgr',
-    		'description' => 'grayToBgr - convert a grayscale image to BGR',
+    		'description' => 'convert a grayscale image to BGR',
     		'prototype' => 'public CVApi\CVApi grayToBgr(void)',
     		'explanation' => 'This function receives a grayscale image (2-dimensional array) and converts it to BGR version',
     		'parameters' => '<ul>
@@ -341,7 +341,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'grayToRgb',
-    		'description' => 'grayToRgb - convert a grayscale image to RGB',
+    		'description' => 'convert a grayscale image to RGB',
     		'prototype' => 'public CVApi\CVApi grayToRgb(void)',
     		'explanation' => 'This function receives a grayscale image (2-dimensional array) and converts it to RGB version',
     		'parameters' => '<ul>
@@ -364,7 +364,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'histogram',
-    		'description' => 'histogram - extract a histogram of the image',
+    		'description' => 'extract a histogram of the image',
     		'prototype' => 'public CVApi\CVApi histogram($bean_size = 256, $range_min = 0, $range_max = 256)',
     		'explanation' => 'This function receives 3 parameters and creates a histogram by plotting it as a graph',
     		'parameters' => '<ul>
@@ -384,7 +384,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'hsvToBgr',
-    		'description' => 'hsvToBgr - convert an HSV image to BGR',
+    		'description' => 'convert an HSV image to BGR',
     		'prototype' => 'public CVApi\CVApi hsvToBgr(void)',
     		'explanation' => 'This function receives a coloured HSV image (3-dimensional array) and converts it to BGR version',
     		'parameters' => '<ul>
@@ -407,7 +407,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'hsvToRgb',
-    		'description' => 'hsvToRgb - convert an HSV image to RGB',
+    		'description' => 'convert an HSV image to RGB',
     		'prototype' => 'public CVApi\CVApi hsvToRgb(void)',
     		'explanation' => 'This function receives a coloured HSV image (3-dimensional array) and converts it to RGB version',
     		'parameters' => '<ul>
@@ -430,7 +430,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'imageChannels',
-    		'description' => 'imageChannels - extract individual image channels.',
+    		'description' => 'extract individual image channels.',
     		'prototype' => 'public CVApi\CVApi imageChannels($array = [\'B\', \'G\', \'R\'])',
     		'explanation' => 'This function receives an array containing image channels which are to be extracted',
     		'parameters' => '<ul>
@@ -444,7 +444,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'medianBlur',
-    		'description' => 'medianBlur - blurs an image',
+    		'description' => 'blurs an image',
     		'prototype' => 'public CVApi\CVApi medianBlur($size)',
     		'explanation' => 'This function receives 1 parameter which specifies the magnitude of the blur',
     		'parameters' => '<ul>
@@ -462,7 +462,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'morphGradient',
-    		'description' => 'morphGradient - perform morphGradient on an image',
+    		'description' => 'perform morphGradient on an image',
     		'prototype' => 'public CVApi\CVApi morphGradient($kernel_size = 3)',
     		'explanation' => 'This function receives 1 parameter which perform morphGradient on an image',
     		'parameters' => '<ul>
@@ -481,7 +481,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'normalBlur',
-    		'description' => 'normalBlur - blurs an image',
+    		'description' => 'blurs an image',
     		'prototype' => 'public CVApi\CVApi normalBlur($box_size)',
     		'explanation' => 'This function receives 1 parameter which specifies the size of the box',
     		'parameters' => '<ul>
@@ -499,7 +499,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'opening',
-    		'description' => 'opening - perform dilation followed by erosion on an image',
+    		'description' => 'perform dilation followed by erosion on an image',
     		'prototype' => 'public CVApi\CVApi opening($kernel_size = 3)',
     		'explanation' => 'This function receives 1 parameters which perform opening on an image',
     		'parameters' => '<ul>
@@ -518,7 +518,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'pyrDown',
-    		'description' => 'pyrDown - perform gradual decrease in size of image',
+    		'description' => 'perform gradual decrease in size of image',
     		'prototype' => 'public CVApi\CVApi pyrDown($times = 1)',
     		'explanation' => 'This function receives 1 parameter which performs pyrDown on an image',
     		'parameters' => '<ul>
@@ -539,7 +539,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'pyrUp',
-    		'description' => 'pyrUp - perform gradual increase in size of image',
+    		'description' => 'perform gradual increase in size of image',
     		'prototype' => 'public CVApi\CVApi pyrUp($times = 1)',
     		'explanation' => 'This function receives 1 parameter which performs pyrUp on an image',
     		'parameters' => '<ul>
@@ -560,7 +560,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'reduce',
-    		'description' => 'reduce - reduces an image',
+    		'description' => 'reduces an image',
     		'prototype' => 'public CVApi\CVApi reduce($fx, $fy)',
     		'explanation' => 'This function receives 2 parameters which reduces an image (without skew)',
     		'parameters' => '<ul>
@@ -584,7 +584,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'resize',
-    		'description' => 'resize - resize an image',
+    		'description' => 'resize an image',
     		'prototype' => 'public CVApi\CVApi resize($x, $y, $interpolation)',
     		'explanation' => 'This function receives 3 parameters which resize an image (with skew)',
     		'parameters' => '<ul>
@@ -611,7 +611,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'rgbToBgr',
-    		'description' => 'rgbToBgr - convert an RGB image to BGR',
+    		'description' => 'convert an RGB image to BGR',
     		'prototype' => 'public CVApi\CVApi rgbToBgr(void)',
     		'explanation' => 'This function receives a coloured RGB image (3-dimensional array) and converts it to BGR version',
     		'parameters' => '<ul>
@@ -634,7 +634,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'rgbToGray',
-    		'description' => 'rgbToGray - convert an RGB image to grayscale',
+    		'description' => 'convert an RGB image to grayscale',
     		'prototype' => 'public CVApi\CVApi rgbToGray(void)',
     		'explanation' => 'This function receives a coloured RGB image (3-dimensional array) and converts it to grayscale version',
     		'parameters' => '<ul>
@@ -657,7 +657,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'rgbToHsv',
-    		'description' => 'rgbToHsv - convert an RGB image to HSV',
+    		'description' => 'convert an RGB image to HSV',
     		'prototype' => 'public CVApi\CVApi rgbToHsv(void)',
     		'explanation' => 'This function receives a coloured RGB image (3-dimensional array) and converts it to HSV version',
     		'parameters' => '<ul>
@@ -680,7 +680,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'rotate',
-    		'description' => 'rotate - rotates an image',
+    		'description' => 'rotates an image',
     		'prototype' => 'public CVApi\CVApi rotate($x, $y, $angle)',
     		'explanation' => 'This function receives 3 parameters which rotate an image',
     		'parameters' => '<ul>
@@ -707,7 +707,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'sharpen',
-    		'description' => 'sharpen - sharpens an image',
+    		'description' => 'sharpens an image',
     		'prototype' => 'public CVApi\CVApi sharpen(void)',
     		'explanation' => 'This function sharpens an image',
     		'parameters' => '<ul>
@@ -725,7 +725,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'threshold',
-    		'description' => 'threshold - binary thresholding of an image',
+    		'description' => 'binary thresholding of an image',
     		'prototype' => 'public CVApi\CVApi threshold($min, $max, $type)',
     		'explanation' => 'This function receives 3 parameters which determine thresholding of an image',
     		'parameters' => '<ul>
@@ -747,7 +747,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'topHat',
-    		'description' => 'topHat - perform topHat on an image',
+    		'description' => 'perform topHat on an image',
     		'prototype' => 'public CVApi\CVApi topHat($kernel_size = 3)',
     		'explanation' => 'This function receives 1 parameter which performs topHat on an image',
     		'parameters' => '<ul>
@@ -766,7 +766,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'translate',
-    		'description' => 'translate - translates an image',
+    		'description' => 'translates an image',
     		'prototype' => 'public CVApi\CVApi translate($x, $y)',
     		'explanation' => 'This function receives 2 parameters which translates an image',
     		'parameters' => '<ul>
@@ -790,7 +790,7 @@ class DocumentationsTableSeeder extends Seeder
 				</ul>",
     		], [
     		'name' => 'transpose',
-    		'description' => 'transpose - gets a transpose of an image (90 degree rotation)',
+    		'description' => 'gets a transpose of an image (90 degree rotation)',
     		'prototype' => 'public CVApi\CVApi transpose(void)',
     		'explanation' => 'This function transposes an image',
     		'parameters' => '<ul>
