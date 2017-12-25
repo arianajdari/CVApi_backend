@@ -29,7 +29,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand mb-0 h1" href="index.html">
+        <a class="navbar-brand mb-0 h1" href="{{ route('login') }}">
             <img  src="{{URL::to('images/CVApiLogo3.png')}}" width="33"  class="d-inline-block align-top mr-1 mb-0" alt="" >
             CVApi
         </a>

@@ -47,6 +47,20 @@
 
                 <div class="d-inline ml-auto">
                   <ul class="navbar-nav mx-a">
+                    
+                    @if(Auth::user())
+                    <li class="nav-item">
+                      <a href="{{ route('dashboard') }}" class="nav-link  joinUs">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ route('getDocumentation', ['id' => 1]) }}" class="nav-link  joinUs">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ route('logout') }}" class="sign-up">
+                        <button class="btn btn-outline-danger "> <span class="mb-0 h5">Log Out</span></button>
+                      </a>
+                    </li>
+                    @else
                     <li class="nav-item">
                       <a href="{{ route('logreg') }}" class="nav-link  joinUs">Join Us</a>
                     </li>
@@ -55,6 +69,11 @@
                         <button class="btn btn-outline-danger "> <span class="mb-0 h5">Sign In</span></button>
                       </a>
                     </li>
+                    @endif
+
+
+
+                    
                   </ul>
                 </div>
                 

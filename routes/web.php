@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function (\Illuminate\Support\Facades\Auth $user) {
-	if($user::user() and $user::user()->rememberMe == 1) return redirect()->route('dashboard');
-	else {$user::logout(); return view('index');};
+Route::get('/', function () {
+	return view('index');
 })->name('login');
 
-Route::get('/logreg', function() {
+Route::get('/logreg', function(\Illuminate\Support\Facades\Auth $user) {
+	if($user::user() and $user::user()->rememberMe == 1) return redirect()->route('dashboard');
 	return view('logreg');
 })->name('logreg');
 
