@@ -94,9 +94,7 @@
 												
 											</div>
 											<div class="col-lg-6 ">
-												<div class="text-center">
-													<a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
-												</div>
+												
 											</div>
 										</div>
 									</div>
