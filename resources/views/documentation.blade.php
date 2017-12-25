@@ -37,10 +37,10 @@
           <div class="d-inline ml-auto">
             <ul class="navbar-nav mx-a">
               <li class="nav-item">
-                <a href="dashboard.html" class="nav-link  joinUs">Dashboard</a>
+                <a href="{{ route('dashboard')}}" class="nav-link  joinUs">Dashboard</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="sign-up">
+                <a href="{{ route('logout') }}" class="sign-up">
                   <button class="btn btn-outline-danger "> <span class="mb-0 h5">Log Out</span></button>
                 </a>
               </li>

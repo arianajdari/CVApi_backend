@@ -77,6 +77,13 @@
     </form>
 </div>
 
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    <span  class="sr-only">60% Complete</span>
+  </div>
+</div>
+
+
 
 
         <script type="text/javascript" src="{{ URL::to('js/app.js') }}"></script>
@@ -110,29 +117,50 @@
                     event.stopPropagation();
                     
 
-                    upload(event.originalEvent.dataTransfer.files);
+                    uploadImages(event.originalEvent.dataTransfer.files);
 
                 });
 
-                var upload = function(files) {
+                var uploadImages = function(files) {
                     var xhr = new XMLHttpRequest(),
                         formdata = new FormData();
 
                     formdata.append('file', files[0]);
 
-                    xhr.onload = function() {
-                        text = this.responseText;
-                        text = jQuery.parseJSON(text);
-                        $('.image').html("<img style='height:300px;' src='/getImage/"+ text.message +"'>");
-                        $('#upload').css('display','none');
-                        $('.image').css('display','block');
-                        $('#options').css('display', 'block');
-                        name = text.message;
-
-                    }
+                    xhr.upload.addEventListener("progress", progressHandler, false);
+                    xhr.addEventListener("load", completeHandler, false);
+                    xhr.addEventListener("error", errorHandler, false);
+                    xhr.addEventListener("abort", abortHandler, false);
                     xhr.open('post', url);
                     xhr.send(formdata);
+
+
                 }
+
+                function progressHandler(event) {
+                    var percent = Math.round((event.loaded / event.total) * 100);
+                    $('.progress-bar').css('width', percent);
+                    console.log(percent);
+                };
+
+                function completeHandler(event) {
+                    text = this.responseText;
+                    text = jQuery.parseJSON(text);
+                    $('.image').html("<img style='height:300px;' src='/getImage/"+ text.message +"'>");
+                    $('#upload').css('display','none');
+                    $('.image').css('display','block');
+                    $('#options').css('display', 'block');
+                    name = text.message;
+                }
+
+                function errorHandler(event) {
+
+                }
+
+                function abortHandler(event) {
+
+                }
+
 
 
                 $("input[type=submit]").click(function(e) {
