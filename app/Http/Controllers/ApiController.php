@@ -73,4 +73,22 @@ class ApiController extends Controller
         File::delete(storage_path() . '/app/' . $image_name);
         return ["photo" => $file];
     }
+
+    public function testApp(Request $request)
+    {
+        $userApp = UserApp::where('public_key', $request->public_key)->get();
+
+        if(!(count($userApp) > 0))
+            return response()->json(['message' => 'Looks like you have a problem to access CVApi. Please check your credentials!']);
+
+        $public_key = $userApp[0]->public_key;
+        $secret_key = $userApp[0]->secret_key;
+        $password = $userApp[0]->password;
+
+        if($public_key === $request->public_key and $secret_key === $request->secret_key and $password === $request->password)
+            return response()->json(['message' => 'You were successfully authenticated! You can now access full functionality of CVApi'], 200);
+        else
+            return response()->json(['message' => 'Looks like you have a problem to access CVApi. Please check your credentials!']);
+            
+    }
 }

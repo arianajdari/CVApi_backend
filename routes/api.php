@@ -17,3 +17,8 @@ Route::post('/request', [
 	'uses' => 'ApiController@processRequest',
 	'as' => 'request'
 ]);
+
+Route::post('/testApp', [
+	'uses' => 'ApiController@testApp',
+	'as' => 'testApp'
+]);
