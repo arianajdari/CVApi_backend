@@ -145,20 +145,26 @@
             </div>
           </div>
           <div class="row mt-3 " style="">
-            <div class="col-md-8 py-5 mb-5 text-white" style="border-radius: 10px; background:#868e96;">
+            <div class="col-md-8 py-5  text-white" style="border-radius: 10px; background:#868e96;">
               <h6 class="mx-5 example-code">
                <?php echo $data[0]->example; ?>
               </h6>
             </div>
           </div>
-      </div>
-      <div class="container " id="document" >
-          <div class="row">
+          <div class="row mt-3">
+            <div class="col-md-8 subtitle">
+              <h2 class="description ">Links</h2>
+            </div>
+          </div>
+           <div class="row">
             <div class="col-md-8" >
         <?php echo $data[0]->links; ?>
     </div>
   </div>
-</div>
+
+
+      </div>
+  
        
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
      <script type="text/javascript" src="{{ URL::to('js/popper.min.js') }}" ></script>  
